@@ -10,8 +10,27 @@ function DnD(canvas, interactor) {
 	this.cordFinalY = 0;
 	
 	// Developper les 3 fonctions gérant les événements
-
+    this.pression = function (evt) {
+    	
+    	this.cordInitX = getMousePosition(canvas,evt).x;
+    	this.cordInitY = getMousePosition(canvas,evt).y;
+    }.bind(this);
+    
+    this.deplacement = function(evt) {
+    	this.cordInitX = getMousePosition(canvas,evt).x;
+    	this.cordInitY = getMousePosition(canvas,evt).y;
+    }.bind(this);
+    
+    this.relachement = function(evt) {
+    	this.cordInitX = getMousePosition(canvas,evt).x;
+    	this.cordInitY = getMousePosition(canvas,evt).y;
+    }.bind(this);
+	
 	// Associer les fonctions précédentes aux évènements du canvas.
+    canvas.addEventListener('mousedown', this.pression, false);
+    canvas.addEventListener('mouseup', this.maFctRelachement, false);
+    canvas.addEventListener('mousemove', this.deplacement, false);
+    
 };
 
 

@@ -27,3 +27,8 @@ Drawing.prototype.paint = function(ctx) {
         eltDuTableau.paint(ctx);
     });
 };
+
+Drawing.prototype.updateShapeList = function(form){
+	// Element shapelist
+  var shapeList = document.getElementById('shapeList');
+}
